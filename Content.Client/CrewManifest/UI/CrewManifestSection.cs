@@ -1,4 +1,4 @@
-﻿using Content.Shared.CrewManifest;
+using Content.Shared.CrewManifest;
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
@@ -35,11 +35,12 @@ public sealed class CrewManifestSection : BoxContainer
 
         foreach (var entry in entries)
         {
-            var name = new RichTextLabel()
+            var name = new LineEdit()
             {
                 HorizontalExpand = true,
             };
-            name.SetMessage(entry.Name);
+            name.SetText(entry.Name);
+            name.Editable = false;
 
             var titleContainer = new BoxContainer()
             {
